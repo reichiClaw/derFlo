@@ -469,6 +469,7 @@ hr {
 
 .site-header .wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
@@ -566,8 +567,11 @@ hr {
   display: inline-flex;
 }
 
+/* Ohne JavaScript auf kleinen Bildschirmen: die Navigation nimmt eine
+   eigene Zeile unter Marke und Schaltflächen ein. */
 .site-nav {
-  border-bottom: 1px solid var(--line);
+  flex: 1 1 100%;
+  border-top: 1px solid var(--line);
 }
 
 .site-nav__inner {
@@ -575,6 +579,13 @@ hr {
   flex-direction: column;
   gap: var(--space-2);
   padding-block: var(--space-4);
+}
+
+/* Als ausgeklapptes Panel (mit JavaScript) braucht die Navigation den Seitenrand selbst. */
+@media (max-width: 59.99em) {
+  .js .site-header.is-open .site-nav__inner {
+    padding-inline: var(--gutter);
+  }
 }
 
 .site-nav__list {
@@ -756,9 +767,16 @@ hr {
 }
 
 /* Ohne JavaScript soll die Navigation auf kleinen Bildschirmen nicht den
-   Hero überlagern: sie steht einfach im Fluss unter der Kopfzeile. */
+   Hero überlagern: sie steht einfach im Fluss unter der Kopfzeile, und die
+   dann hohe Kopfzeile klebt nicht am oberen Rand. */
 .site-header:not(.is-open) .site-nav {
   position: static;
+}
+
+@media (max-width: 59.99em) {
+  html:not(.js) .site-header {
+    position: static;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1587,6 +1605,11 @@ hr {
   display: inline-block;
   margin-bottom: var(--space-5);
   font-size: var(--text-sm);
+}
+
+.page .eyebrow {
+  display: flex;
+  margin-bottom: var(--space-3);
 }
 
 .draft {

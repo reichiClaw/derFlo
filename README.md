@@ -160,3 +160,11 @@ Nicht geprüft (keine Geräte verfügbar): Safari/iOS, Firefox, echte Touch-Ger�
 - Fraunces © The Fraunces Project Authors (Undercase Type) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Fraunces-OFL.txt`.
 - Inter © The Inter Project Authors (Rasmus Andersson) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Inter-OFL.txt`.
 - Die Schriftdateien sind auf den lateinischen Zeichenvorrat reduziert (erlaubt unter OFL, die Dateinamen enthalten den Zusatz „Latin“).
+
+## ZIP für die Übergabe erzeugen
+
+Im Projektordner (ohne Git-Dateien):
+
+```bash
+zip -r derflo-website.zip index.html en.html styles.css script.js anfrage.php impressum.html datenschutz.html README.md assets
+```

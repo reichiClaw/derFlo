@@ -23,6 +23,7 @@ Deutsch und Englisch, ohne Framework, ohne Build-Prozess, ohne externe Dienste.
 - **Farben:** warmes Elfenbein (`#f4efe6`) für helle Flächen, tiefes Anthrazit (`#232122`) für Text und den Abschnitt „Über Flo“, dunkles Weinrot (`#6d1f2f`) als einzige Akzentfarbe – für die kursive Hälfte der Headline, Nummern, Schaltflächen und feine Linien. Kein Farbwechsel pro Abschnitt.
 - **Schrift:** *Fraunces* (weiche, charaktervolle Serif mit optischen Größen) für Headlines, Zahlen und Zitate; *Inter* für Fließtext und Bedienelemente. Beide liegen lokal als variable WOFF2 (Latin-Subset) in `assets/fonts/`, es wird nichts extern geladen.
 - **Layout:** mobile first, darauf aufbauend asymmetrische 12-Spalten-Raster auf großen Bildschirmen. Formate als nummerierte redaktionelle Liste mit Hairlines statt Kartenraster; Prozess als drei Spalten mit großen Ziffern; Einblicke als Mosaik mit unterschiedlichen Seitenverhältnissen; Kontakt zweispaltig mit klebender Einleitung.
+- **Bildmarke:** das „F“ mit Punkt von karrer.kitchen (`assets/img/logo.svg`) steht in Kopfzeile, Footer, Favicon und OG-Bild und ersetzt im Abschnitt „Über Flo“ den Zitatbalken. Das Original ist Orange (`#dc4114`); auf der Website läuft es in der Akzentfarbe Weinrot bzw. Elfenbein auf dunklem Grund, damit die Seite bei einer Akzentfarbe bleibt. Soll das Orange erhalten bleiben, in `logo.svg` und `favicon.svg` den `fill` ändern und `.pull__mark` in `styles.css` eine feste Farbe geben.
 - **Ton:** Ich-Perspektive, „du“, herzlich und leicht augenzwinkernd. Leitidee „Du lädst ein. Ich koche.“, der bestehende Claim „Cooking is not a crime“ als sekundäres Band und Zitat.
 - **Bewegung:** nur dezente Hover-Übergänge und eine kleine Einblendung beim Scrollen. Mit `prefers-reduced-motion` oder ohne JavaScript ist alles sofort und vollständig sichtbar.
 
@@ -37,7 +38,7 @@ anfrage.php         Formular-Endpunkt: Prüfung, Mailversand per mail(), Fehler-
 impressum.html      Impressum – ENTWURF mit markierten Pflichtangaben
 datenschutz.html    Datenschutzerklärung – ENTWURF, beschreibt exakt die technische Realität der Website
 assets/fonts/       Fraunces und Inter (WOFF2) inkl. Lizenzen
-assets/img/         favicon.svg, og-image.png (DE), og-image-en.png (EN)
+assets/img/         logo.svg (Bildmarke), favicon.svg, og-image.png (DE), og-image-en.png (EN)
 ```
 
 Alle Pfade sind relativ; die Website funktioniert auch in einem Unterverzeichnis (z. B. `https://domain.tld/privatecooking/`).
@@ -112,7 +113,7 @@ Auch das OG-Bild (`assets/img/og-image.png`, 1200 × 630 px) kann später durch 
 - [ ] Hero-Foto: Flo beim Anrichten oder in einer echten Kochsituation, Hochformat 4:5, mit Nutzungsfreigabe des Fotografen.
 - [ ] Porträt von Florian für „Über Flo“, Hochformat 3:4, freigegeben.
 - [ ] 4–6 Bilder für „Einblicke“: Gericht (3:2), Hände beim Anrichten (4:5), Zutaten (4:5), Tischsituation (16:9), am Herd (1:1), Detail (1:1). Nur eigene Gerichte, nur freigegebenes Material.
-- [ ] Freigabe des Oktopuslogos von karrer.kitchen als Datei (SVG oder hochauflösendes PNG), falls es auf dieser Website erscheinen soll. Es wurde bewusst **nicht** nachgebaut.
+- [ ] Bestätigung, dass die Bildmarke (F mit Punkt) in Weinrot statt im Original-Orange verwendet werden darf; das Oktopuslogo von karrer.kitchen liegt weiterhin nicht als Datei vor und wurde nicht nachgebaut.
 - [ ] Bestätigung der Texte durch Florian, insbesondere: Stationsangabe „Villa Joya, Portugal“, Beschreibung des Küchenstils (aus dem KITSCH-Text abgeleitet), die Aussage „Am Herd stehe ich selbst“.
 - [ ] Entscheidung, ob Social-Media-Profile verlinkt werden sollen (derzeit keine bekannt, daher keine Links).
 

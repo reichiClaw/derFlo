@@ -478,9 +478,28 @@ hr {
 
 .brand {
   display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+/* Bildmarke: das „F“ mit Punkt aus karrer.kitchen, hier in der Akzentfarbe.
+   Sehr schmales Hochformat – die Höhe bestimmt die Größe. */
+.brand__mark {
+  flex: none;
+  width: auto;
+  height: 2.5rem;
+  transition: transform var(--dur) var(--ease);
+}
+
+.brand:hover .brand__mark {
+  transform: translateY(-1px);
+}
+
+.brand__text {
+  display: flex;
   flex-direction: column;
   line-height: 1.1;
-  text-decoration: none;
 }
 
 .brand__name {
@@ -1089,14 +1108,24 @@ hr {
 }
 
 .pull {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--text-xl);
   line-height: 1.15;
-  padding-left: var(--space-5);
-  border-left: 1px solid var(--line-strong);
   margin: var(--space-2) 0;
   font-variation-settings: "opsz" 72;
+}
+
+/* Die Bildmarke übernimmt hier die Rolle des Zitatbalkens. */
+.pull__mark {
+  flex: none;
+  height: 4.5rem;
+  width: auto;
+  fill: currentColor;
+  opacity: 0.9;
 }
 
 .facts {
@@ -1521,6 +1550,10 @@ hr {
 
 .site-footer .brand {
   display: inline-flex;
+}
+
+.site-footer .brand__mark {
+  height: 3rem;
 }
 
 .site-footer .brand__name {

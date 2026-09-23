@@ -305,8 +305,11 @@ function renderField(array $t, array $data, array $errors, string $key, string $
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="<?= $lang === 'en' ? 'en.html' : 'index.html' ?>">
-        <span class="brand__name">derFlo</span>
-        <span class="brand__sub">Florian Karrer · Private Cooking</span>
+        <img class="brand__mark" src="assets/img/logo.svg" width="134" height="580" alt="">
+        <span class="brand__text">
+          <span class="brand__name">derFlo</span>
+          <span class="brand__sub">Florian Karrer · Private Cooking</span>
+        </span>
       </a>
     </div>
   </header>

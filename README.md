@@ -114,7 +114,7 @@ Auch das OG-Bild (`assets/img/og-image.png`, 1200 × 630 px) kann später durch 
 - [ ] Porträt von Florian für „Über Flo“, Hochformat 3:4, freigegeben.
 - [ ] 4–6 Bilder für „Einblicke“: Gericht (3:2), Hände beim Anrichten (4:5), Zutaten (4:5), Tischsituation (16:9), am Herd (1:1), Detail (1:1). Nur eigene Gerichte, nur freigegebenes Material.
 - [ ] Bestätigung, dass die Bildmarke (F mit Punkt) in Weinrot statt im Original-Orange verwendet werden darf; das Oktopuslogo von karrer.kitchen liegt weiterhin nicht als Datei vor und wurde nicht nachgebaut.
-- [ ] Bestätigung der Texte durch Florian, insbesondere: Stationsangabe „Villa Joya, Portugal“, Beschreibung des Küchenstils (aus dem KITSCH-Text abgeleitet), die Aussage „Am Herd stehe ich selbst“.
+- [ ] Bestätigung der Texte durch Florian, insbesondere die Zahlen in „Über Flo“ (15 Jahre Küche, 19 Saisonen, Schlegelkopf, Achterdeck by Aichinger, Vila Joya) und die Zusage „in der Regel innerhalb von 24 Stunden“ in der Anfrage-Bestätigung.
 - [ ] Entscheidung, ob Social-Media-Profile verlinkt werden sollen (derzeit keine bekannt, daher keine Links).
 
 **Domain und Technik**
@@ -154,6 +154,7 @@ Nicht geprüft (keine Geräte verfügbar): Safari/iOS, Firefox, echte Touch-Ger�
 - Englische Fassung von Impressum und Datenschutz.
 - Ein zweites OG-Bild mit echtem Foto.
 - Weitere Sprache (z. B. Französisch) nach dem Muster von `en.html`.
+- AGB-Seite (`agb.html`) mit Leistungsumfang und Arbeitsweise, verlinkt im Footer neben Impressum und Datenschutz – sobald der AGB-Text vorliegt.
 
 ## Lizenzen
 

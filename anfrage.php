@@ -43,8 +43,8 @@ $t = [
         'back_href'      => 'index.html#anfrage',
         'heading_error'  => 'Da fehlt noch etwas.',
         'intro_error'    => 'Bitte prüfe die markierten Felder. Deine bisherigen Angaben sind noch da.',
-        'heading_ok'     => 'Danke, deine Anfrage ist angekommen.',
-        'intro_ok'       => 'Ich lese jede Anfrage selbst und melde mich persönlich bei dir. Wenn es eilt, ruf mich einfach an.',
+        'heading_ok'     => 'Vielen Dank für deine Anfrage!',
+        'intro_ok'       => 'Auf Basis deiner Angaben stelle ich ein individuelles Menü und das zugehörige Angebot zusammen – das bekommst du in der Regel innerhalb von 24 Stunden per Mail. Wenn es eilt, ruf mich einfach an.',
         'heading_fail'   => 'Das hat gerade nicht geklappt.',
         'intro_fail'     => 'Die Anfrage konnte nicht versendet werden. Bitte schreib mir direkt oder ruf an – ich freue mich darauf.',
         'method'         => 'Diese Seite nimmt nur ausgefüllte Anfragen entgegen.',
@@ -65,7 +65,8 @@ $t = [
         'err_short'      => 'Ein paar Sätze mehr helfen mir, deine Anfrage einzuordnen.',
         'err_long'       => 'Die Nachricht ist etwas zu lang. Bitte kürze sie ein wenig.',
         'err_fix'        => 'Bitte prüfe die markierten Felder.',
-        'ok_message'     => 'Danke! Deine Anfrage ist bei mir angekommen. Ich melde mich persönlich bei dir.',
+        'ok_message'     => 'Vielen Dank für deine Anfrage! Auf Basis deiner Angaben stelle ich ein individuelles Menü und das zugehörige Angebot zusammen – das bekommst du in der Regel innerhalb von 24 Stunden per Mail. Mit kulinarischem Gruß, Flo',
+        'ok_status'      => 'Deine Anfrage ist bei mir angekommen. Mit kulinarischem Gruß, Flo',
         'fail_message'   => 'Das Senden hat gerade nicht funktioniert. Schreib mir bitte direkt an florian@karrer.kitchen oder ruf an: +43 660 14 11 020.',
         'mail_subject'   => 'Neue Anfrage über derFlo',
         'mail_intro'     => 'Neue Anfrage über die Website (Sprache: Deutsch)',
@@ -78,8 +79,8 @@ $t = [
         'back_href'      => 'en.html#enquiry',
         'heading_error'  => 'Something’s still missing.',
         'intro_error'    => 'Please check the highlighted fields. Everything you’ve entered so far is still here.',
-        'heading_ok'     => 'Thank you, your enquiry has arrived.',
-        'intro_ok'       => 'I read every enquiry myself and will get back to you personally. If it’s urgent, just give me a call.',
+        'heading_ok'     => 'Thank you for your enquiry!',
+        'intro_ok'       => 'Based on your details, I’ll put together an individual menu and the matching offer – you’ll usually receive it by email within 24 hours. If it’s urgent, just give me a call.',
         'heading_fail'   => 'That didn’t work just now.',
         'intro_fail'     => 'Your enquiry could not be sent. Please email or call me directly – I’m looking forward to hearing from you.',
         'method'         => 'This page only accepts submitted enquiries.',
@@ -100,7 +101,8 @@ $t = [
         'err_short'      => 'A few more sentences help me understand what you have in mind.',
         'err_long'       => 'Your message is a little too long. Please shorten it a bit.',
         'err_fix'        => 'Please check the highlighted fields.',
-        'ok_message'     => 'Thank you! Your enquiry has reached me. I’ll get back to you personally.',
+        'ok_message'     => 'Thank you for your enquiry! Based on your details, I’ll put together an individual menu and the matching offer – you’ll usually receive it by email within 24 hours. With culinary regards, Flo',
+        'ok_status'      => 'Your enquiry has reached me. With culinary regards, Flo',
         'fail_message'   => 'Sending didn’t work just now. Please email me directly at florian@karrer.kitchen or call +43 660 14 11 020.',
         'mail_subject'   => 'New enquiry via derFlo',
         'mail_intro'     => 'New enquiry via the website (language: English)',
@@ -365,7 +367,7 @@ function renderField(array $t, array $data, array $errors, string $key, string $
 
         <?php else: ?>
           <div class="form__status <?= $state === 'ok' ? 'is-success' : 'is-error' ?>" role="status" style="margin-top: 2rem;">
-            <?= e($state === 'ok' ? $t['ok_message'] : $t['fail_message']) ?>
+            <?= e($state === 'ok' ? $t['ok_status'] : $t['fail_message']) ?>
           </div>
 
           <h2><?= e($t['direct']) ?></h2>

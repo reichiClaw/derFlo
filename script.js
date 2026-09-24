@@ -17,7 +17,7 @@
       fix: "Bitte prüfe die markierten Felder.",
       sending: "Deine Anfrage wird gesendet …",
       send: "Anfrage senden",
-      success: "Danke! Deine Anfrage ist bei mir angekommen. Ich melde mich persönlich bei dir.",
+      success: "Vielen Dank für deine Anfrage! Auf Basis deiner Angaben stelle ich ein individuelles Menü und das zugehörige Angebot zusammen – das bekommst du in der Regel innerhalb von 24 Stunden per Mail. Mit kulinarischem Gruß, Flo",
       fail: "Das Senden hat gerade nicht funktioniert. Schreib mir bitte direkt an florian@karrer.kitchen oder ruf an: +43 660 14 11 020."
     },
     en: {
@@ -27,7 +27,7 @@
       fix: "Please check the highlighted fields.",
       sending: "Sending your enquiry …",
       send: "Send enquiry",
-      success: "Thank you! Your enquiry has reached me. I’ll get back to you personally.",
+      success: "Thank you for your enquiry! Based on your details, I’ll put together an individual menu and the matching offer – you’ll usually receive it by email within 24 hours. With culinary regards, Flo",
       fail: "Sending didn’t work just now. Please email me directly at florian@karrer.kitchen or call +43 660 14 11 020."
     }
   }[lang];

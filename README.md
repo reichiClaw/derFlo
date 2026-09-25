@@ -18,12 +18,13 @@ Deutsch und Englisch, ohne Framework, ohne Build-Prozess, ohne externe Dienste.
 
 ## Gestalterische Richtung
 
-**Kulinarisches Magazin trifft persönliche Website eines Kochs.**
+**Beton, Orange, schmale Versalien – die Anmutung der bestehenden derFlo-Grafik, als Website.**
 
-- **Farben:** warmes Elfenbein (`#f4efe6`) für helle Flächen, tiefes Anthrazit (`#232122`) für Text und den Abschnitt „Über Flo“, dunkles Weinrot (`#6d1f2f`) als einzige Akzentfarbe – für die kursive Hälfte der Headline, Nummern, Schaltflächen und feine Linien. Kein Farbwechsel pro Abschnitt.
-- **Schrift:** *Fraunces* (weiche, charaktervolle Serif mit optischen Größen) für Headlines, Zahlen und Zitate; *Inter* für Fließtext und Bedienelemente. Beide liegen lokal als variable WOFF2 (Latin-Subset) in `assets/fonts/`, es wird nichts extern geladen.
+- **Farben:** dunkler Beton als Grundfläche (Basis `#1a1a1a`, darüber eine gekachelte SVG-Textur `assets/img/concrete.svg`, siehe unten), helles Steingrau (`#ece7df`) für Text, das Original-Orange der Bildmarke (`#dc4114`) als einzige Akzentfarbe – für die zweite Hälfte der Headline, Nummern, Schaltflächen und feine Linien. Der Abschnitt „Über Flo“ liegt auf glattem Schwarz (`#101010`), „Einblicke“ auf leicht abgedunkeltem Beton; sonst kein Farbwechsel pro Abschnitt.
+- **Betontextur:** `assets/img/concrete.svg` ist keine Fotografie, sondern eine kleine (unter 1 KB), nahtlos kachelbare Datei, die die Struktur per SVG-Filter (`feTurbulence`) erzeugt – Wolken und feines Korn. Dadurch bleibt der Hintergrund scharf auf jeder Auflösung und kostet keine Ladezeit. Intensität lässt sich in der Datei über die beiden `tableValues` (Alpha der Wolken bzw. des Korns) regeln; die Kachelgröße steht in `styles.css` unter `body { background-size }`.
+- **Schrift:** *Oswald* (schmale, kräftige Grotesk, in Versalien gesetzt) für Headlines, Nummern, Zitate und Schaltflächen; *Inter* für Fließtext und Formulare. Beide liegen lokal als variable WOFF2 (Latin-Subset) in `assets/fonts/`, es wird nichts extern geladen. Überschriften sind per CSS (`text-transform: uppercase`) in Großbuchstaben gesetzt; im HTML bleiben sie normal geschrieben, damit Screenreader sie korrekt vorlesen.
 - **Layout:** mobile first, darauf aufbauend asymmetrische 12-Spalten-Raster auf großen Bildschirmen. Formate als nummerierte redaktionelle Liste mit Hairlines statt Kartenraster; Prozess als drei Spalten mit großen Ziffern; Einblicke als Mosaik mit unterschiedlichen Seitenverhältnissen; Kontakt zweispaltig mit klebender Einleitung.
-- **Bildmarke:** das „F“ mit Punkt von karrer.kitchen (`assets/img/logo.svg`) steht in Kopfzeile, Footer, Favicon und OG-Bild und ersetzt im Abschnitt „Über Flo“ den Zitatbalken. Das Original ist Orange (`#dc4114`); auf der Website läuft es in der Akzentfarbe Weinrot bzw. Elfenbein auf dunklem Grund, damit die Seite bei einer Akzentfarbe bleibt. Soll das Orange erhalten bleiben, in `logo.svg` und `favicon.svg` den `fill` ändern und `.pull__mark` in `styles.css` eine feste Farbe geben.
+- **Bildmarke:** das „F“ mit Punkt von karrer.kitchen (`assets/img/logo.svg`) steht in Kopfzeile, Footer, Favicon und OG-Bild und ersetzt im Abschnitt „Über Flo“ den Zitatbalken – im Original-Orange (`#dc4114`), das zugleich die Akzentfarbe der gesamten Seite ist.
 - **Ton:** Ich-Perspektive, „du“, herzlich und leicht augenzwinkernd. Leitidee „Du lädst ein. Ich koche.“, der bestehende Claim „Cooking is not a crime“ als sekundäres Band und Zitat.
 - **Bewegung:** nur dezente Hover-Übergänge und eine kleine Einblendung beim Scrollen. Mit `prefers-reduced-motion` oder ohne JavaScript ist alles sofort und vollständig sichtbar.
 
@@ -37,8 +38,8 @@ script.js           Optionales Vanilla-JS: mobile Navigation, Einblendungen, For
 anfrage.php         Formular-Endpunkt: Prüfung, Mailversand per mail(), Fehler-/Erfolgsseiten (DE/EN) und JSON-Antwort
 impressum.html      Impressum – ENTWURF mit markierten Pflichtangaben
 datenschutz.html    Datenschutzerklärung – ENTWURF, beschreibt exakt die technische Realität der Website
-assets/fonts/       Fraunces und Inter (WOFF2) inkl. Lizenzen
-assets/img/         logo.svg (Bildmarke), favicon.svg, og-image.png (DE), og-image-en.png (EN)
+assets/fonts/       Oswald und Inter (WOFF2) inkl. Lizenzen
+assets/img/         logo.svg (Bildmarke), favicon.svg, concrete.svg (Hintergrundtextur), og-image.png (DE), og-image-en.png (EN)
 ```
 
 Alle Pfade sind relativ; die Website funktioniert auch in einem Unterverzeichnis (z. B. `https://domain.tld/privatecooking/`).
@@ -113,7 +114,7 @@ Auch das OG-Bild (`assets/img/og-image.png`, 1200 × 630 px) kann später durch 
 - [ ] Hero-Foto: Flo beim Anrichten oder in einer echten Kochsituation, Hochformat 4:5, mit Nutzungsfreigabe des Fotografen.
 - [ ] Porträt von Florian für „Über Flo“, Hochformat 3:4, freigegeben.
 - [ ] 4–6 Bilder für „Einblicke“: Gericht (3:2), Hände beim Anrichten (4:5), Zutaten (4:5), Tischsituation (16:9), am Herd (1:1), Detail (1:1). Nur eigene Gerichte, nur freigegebenes Material.
-- [ ] Bestätigung, dass die Bildmarke (F mit Punkt) in Weinrot statt im Original-Orange verwendet werden darf; das Oktopuslogo von karrer.kitchen liegt weiterhin nicht als Datei vor und wurde nicht nachgebaut.
+- [ ] Das Oktopuslogo von karrer.kitchen liegt weiterhin nicht als Datei vor und wurde nicht nachgebaut; falls es auf die Seite soll, bitte als SVG liefern.
 - [ ] Bestätigung der Texte durch Florian, insbesondere die Zahlen in „Über Flo“ (15 Jahre Küche, 19 Saisonen, Schlegelkopf, Achterdeck by Aichinger, Vila Joya) und die Zusage „in der Regel innerhalb von 24 Stunden“ in der Anfrage-Bestätigung.
 - [ ] Entscheidung, ob Social-Media-Profile verlinkt werden sollen (derzeit keine bekannt, daher keine Links).
 
@@ -159,7 +160,7 @@ Nicht geprüft (keine Geräte verfügbar): Safari/iOS, Firefox, echte Touch-Ger�
 ## Lizenzen
 
 - Texte, Gestaltung und Code: für Florian Karrer erstellt.
-- Fraunces © The Fraunces Project Authors (Undercase Type) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Fraunces-OFL.txt`.
+- Oswald © The Oswald Project Authors (Vernon Adams) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Oswald-OFL.txt`.
 - Inter © The Inter Project Authors (Rasmus Andersson) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Inter-OFL.txt`.
 - Die Schriftdateien sind auf den lateinischen Zeichenvorrat reduziert (erlaubt unter OFL, die Dateinamen enthalten den Zusatz „Latin“).
 

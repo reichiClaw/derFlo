@@ -410,6 +410,18 @@ hr {
   opacity: 0.85;
 }
 
+/* Echte Fotos: gleiche Fläche und Rahmung wie die Ersatzflächen. */
+.photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ratio, 4 / 5);
+  object-fit: cover;
+  background-color: var(--bg-3);
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+  border-radius: var(--radius);
+}
+
 .ph--accent {
   --ph-bg: var(--accent);
   --ph-fg: #141414;
@@ -834,7 +846,7 @@ hr {
   position: relative;
 }
 
-.hero__figure .ph {
+.hero__figure :is(.ph, .photo) {
   --ratio: 4 / 5;
   --ph-line: rgb(220 65 20 / 0.55);
 }
@@ -1054,7 +1066,7 @@ hr {
   margin: 0;
 }
 
-.about__figure .ph {
+.about__figure :is(.ph, .photo) {
   --ratio: 3 / 4;
 }
 
@@ -1238,13 +1250,13 @@ hr {
 }
 
 .gallery .g1 { grid-column: 1 / -1; }
-.gallery .g1 .ph { --ratio: 3 / 2; }
-.gallery .g2 .ph { --ratio: 4 / 5; }
-.gallery .g3 .ph { --ratio: 4 / 5; }
+.gallery .g1 :is(.ph, .photo) { --ratio: 3 / 2; }
+.gallery .g2 :is(.ph, .photo) { --ratio: 4 / 5; }
+.gallery .g3 :is(.ph, .photo) { --ratio: 4 / 5; }
 .gallery .g4 { grid-column: 1 / -1; }
-.gallery .g4 .ph { --ratio: 16 / 9; }
-.gallery .g5 .ph { --ratio: 1 / 1; }
-.gallery .g6 .ph { --ratio: 1 / 1; }
+.gallery .g4 :is(.ph, .photo) { --ratio: 16 / 9; }
+.gallery .g5 :is(.ph, .photo) { --ratio: 1 / 1; }
+.gallery .g6 :is(.ph, .photo) { --ratio: 1 / 1; }
 
 @media (min-width: 48em) {
   .gallery {

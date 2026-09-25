@@ -111,12 +111,14 @@
           </div>
 
           <figure class="hero__figure">
-            <!-- Hier kommt das Hauptfoto hin: Flo beim Anrichten oder in einer echten Kochsituation (Hochformat 4:5). -->
-            <div class="ph ph--dark" aria-hidden="true">
-              <span class="ph__label">Beim Anrichten</span>
-            </div>
+            <!-- Vorläufiges Stockfoto (Pexels, siehe README „Bildnachweis“). Sobald ein freigegebenes Foto von Flo
+                 beim Anrichten vorliegt (Hochformat 4:5), hier die Dateien in assets/img/photos/ austauschen. -->
+            <picture>
+              <source srcset="assets/img/photos/hero-anrichten.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/hero-anrichten.jpg" width="1200" height="1500" alt="Koch richtet in einer Küche ein Gericht auf einem Teller an" fetchpriority="high">
+            </picture>
             <figcaption>
-              <span>Florian Karrer · Koch und Küchenchef</span>
+              <span>Beim Anrichten</span>
               <span>Lech · Arlberg</span>
             </figcaption>
           </figure>
@@ -210,11 +212,13 @@
       <div class="wrap">
         <div class="about__grid">
           <figure class="about__figure reveal">
-            <!-- Hier kommt ein freigegebenes Porträt von Florian hin (Hochformat 3:4). -->
-            <div class="ph ph--dark" aria-hidden="true">
-              <span class="ph__label">Florian Karrer</span>
-            </div>
-            <figcaption>Florian Karrer, Koch. Zu Hause in Lech am Arlberg.</figcaption>
+            <!-- Vorläufiges Stockfoto (Pexels). Hier soll ein freigegebenes Porträt von Florian hin (Hochformat 3:4);
+                 dann auch die Bildunterschrift anpassen, z. B. „Florian Karrer, Koch. Zu Hause in Lech am Arlberg.“ -->
+            <picture>
+              <source srcset="assets/img/photos/about-handwerk.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/about-handwerk.jpg" width="1000" height="1333" alt="Hand streut Kräuter auf ein angerichtetes Gericht auf dunklem Untergrund" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Anrichten bis ins Detail – Handwerk, keine Show.</figcaption>
           </figure>
 
           <div class="about__text">
@@ -286,35 +290,53 @@
         <div class="section-head reveal">
           <p class="eyebrow">Einblicke</p>
           <h2 id="gallery-title">Aus der Küche, vom Tisch, aus den Händen.</h2>
-          <p class="lead">Eine kleine Auswahl statt einer großen Galerie. Was hier zu sehen ist, ist auch das, was bei dir auf den Tisch kommt: kein Stock, keine Show.</p>
+          <p class="lead">Eine kleine Auswahl statt einer großen Galerie – ein Eindruck davon, worum es mir geht: gutes Essen, ohne Show.</p>
         </div>
 
-        <!-- Sechs kuratierte Bildflächen. Die Flächen reservieren bereits Format und Platz;
-             sobald freigegebene Originalfotos vorliegen, jeweils den <div class="ph"> durch
-             <img src="assets/img/…" width="…" height="…" loading="lazy" alt="…"> ersetzen. -->
+        <!-- Sechs kuratierte Bilder, derzeit vorläufige Stockfotos (Pexels, siehe README „Bildnachweis“).
+             Sobald eigene Fotos vorliegen: Dateien in assets/img/photos/ austauschen (gleiche Seitenverhältnisse),
+             width/height und alt-Text anpassen. -->
         <div class="gallery">
           <figure class="g1 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">Gericht</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g1-gericht.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g1-gericht.jpg" width="1400" height="933" alt="Angerichteter Teller mit Burrata und gebratenem Gemüse auf dunklem Holztisch" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Ein Gang, angerichtet.</figcaption>
           </figure>
           <figure class="g2 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">Hände</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g2-haende.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g2-haende.jpg" width="900" height="1125" alt="Hände richten mit einem Löffel ein Gericht auf einem Teller an" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Hände beim Anrichten.</figcaption>
           </figure>
           <figure class="g3 reveal">
-            <div class="ph ph--dark" aria-hidden="true"><span class="ph__label">Zutaten</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g3-zutaten.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g3-zutaten.jpg" width="900" height="1125" alt="Frisches Gemüse – Kürbis, Spargel, Tomaten, Chili – auf schwarzem Untergrund" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Zutaten, bevor sie zum Gericht werden.</figcaption>
           </figure>
           <figure class="g4 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">Am Tisch</span></div>
-            <figcaption>Der Tisch, kurz bevor die Gäste kommen.</figcaption>
+            <picture>
+              <source srcset="assets/img/photos/g4-am-tisch.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g4-am-tisch.jpg" width="1600" height="900" alt="Gäste stoßen an einem Esstisch bei Kerzenlicht mit Weingläsern an" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Am Tisch, wenn die Gäste da sind.</figcaption>
           </figure>
           <figure class="g5 reveal">
-            <div class="ph ph--dark" aria-hidden="true"><span class="ph__label">Am Herd</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g5-am-herd.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g5-am-herd.jpg" width="900" height="900" alt="Flammen schlagen aus einer Pfanne auf einem Gasherd" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Am Herd.</figcaption>
           </figure>
           <figure class="g6 reveal">
-            <div class="ph ph--accent" aria-hidden="true"><span class="ph__label">Detail</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g6-detail.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g6-detail.jpg" width="900" height="900" alt="Angerichtetes Gericht mit Sauce auf einem weißen Teller mit Goldrand" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Ein Detail, das den Unterschied macht.</figcaption>
           </figure>
         </div>

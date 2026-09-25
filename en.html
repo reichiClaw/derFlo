@@ -111,11 +111,14 @@
 
           <figure class="hero__figure">
             <!-- Main photo goes here: Flo plating or in a real cooking situation (portrait 4:5). -->
-            <div class="ph ph--dark" aria-hidden="true">
-              <span class="ph__label">Plating</span>
-            </div>
+            <!-- Provisional stock photo (Pexels, see README). Replace the files in assets/img/photos/ once an
+                 approved photo of Flo plating is available (portrait 4:5). -->
+            <picture>
+              <source srcset="assets/img/photos/hero-anrichten.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/hero-anrichten.jpg" width="1200" height="1500" alt="Chef plating a dish in a kitchen" fetchpriority="high">
+            </picture>
             <figcaption>
-              <span>Florian Karrer · Chef and head chef</span>
+              <span>Plating</span>
               <span>Lech · Arlberg</span>
             </figcaption>
           </figure>
@@ -210,10 +213,13 @@
         <div class="about__grid">
           <figure class="about__figure reveal">
             <!-- An approved portrait of Florian goes here (portrait 3:4). -->
-            <div class="ph ph--dark" aria-hidden="true">
-              <span class="ph__label">Florian Karrer</span>
-            </div>
-            <figcaption>Florian Karrer, chef. At home in Lech am Arlberg.</figcaption>
+            <!-- Provisional stock photo (Pexels). An approved portrait of Florian belongs here (portrait 3:4);
+                 then adjust the caption, e.g. “Florian Karrer, chef. At home in Lech am Arlberg.” -->
+            <picture>
+              <source srcset="assets/img/photos/about-handwerk.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/about-handwerk.jpg" width="1000" height="1333" alt="Hand sprinkling herbs over a plated dish on a dark surface" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Plating down to the last detail – craft, not show.</figcaption>
           </figure>
 
           <div class="about__text">
@@ -285,35 +291,53 @@
         <div class="section-head reveal">
           <p class="eyebrow">Glimpses</p>
           <h2 id="gallery-title">From the kitchen, the table, the hands.</h2>
-          <p class="lead">A small selection rather than a big gallery. What you see here is what ends up on your table: no stock photos, no show.</p>
+          <p class="lead">A small selection rather than a big gallery – an impression of what matters to me: good food, no show.</p>
         </div>
 
-        <!-- Six curated image areas. They already reserve format and space; once approved
-             original photos are available, replace each <div class="ph"> with
-             <img src="assets/img/…" width="…" height="…" loading="lazy" alt="…"> -->
+        <!-- Six curated images, currently provisional stock photos (Pexels, see README).
+             Once own photos are available: swap the files in assets/img/photos/ (same aspect ratios)
+             and adjust width/height and alt text. -->
         <div class="gallery">
           <figure class="g1 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">Dish</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g1-gericht.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g1-gericht.jpg" width="1400" height="933" alt="Plate of burrata and roasted vegetables on a dark wooden table" loading="lazy" decoding="async">
+            </picture>
             <figcaption>A course, plated.</figcaption>
           </figure>
           <figure class="g2 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">Hands</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g2-haende.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g2-haende.jpg" width="900" height="1125" alt="Hands plating a dish with a spoon" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Hands while plating.</figcaption>
           </figure>
           <figure class="g3 reveal">
-            <div class="ph ph--dark" aria-hidden="true"><span class="ph__label">Ingredients</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g3-zutaten.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g3-zutaten.jpg" width="900" height="1125" alt="Fresh vegetables – pumpkin, asparagus, tomatoes, chilli – on a black surface" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Ingredients, before they become a dish.</figcaption>
           </figure>
           <figure class="g4 reveal">
-            <div class="ph ph--light" aria-hidden="true"><span class="ph__label">At the table</span></div>
-            <figcaption>The table, just before the guests arrive.</figcaption>
+            <picture>
+              <source srcset="assets/img/photos/g4-am-tisch.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g4-am-tisch.jpg" width="1600" height="900" alt="Guests raising wine glasses at a candlelit dinner table" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>At the table, once the guests have arrived.</figcaption>
           </figure>
           <figure class="g5 reveal">
-            <div class="ph ph--dark" aria-hidden="true"><span class="ph__label">At the stove</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g5-am-herd.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g5-am-herd.jpg" width="900" height="900" alt="Flames rising from a pan on a gas stove" loading="lazy" decoding="async">
+            </picture>
             <figcaption>At the stove.</figcaption>
           </figure>
           <figure class="g6 reveal">
-            <div class="ph ph--accent" aria-hidden="true"><span class="ph__label">Detail</span></div>
+            <picture>
+              <source srcset="assets/img/photos/g6-detail.webp" type="image/webp">
+              <img class="photo" src="assets/img/photos/g6-detail.jpg" width="900" height="900" alt="Plated dish with sauce on a white gold-rimmed plate" loading="lazy" decoding="async">
+            </picture>
             <figcaption>A detail that makes the difference.</figcaption>
           </figure>
         </div>

@@ -11,6 +11,7 @@ Deutsch und Englisch, ohne Framework, ohne Build-Prozess, ohne externe Dienste.
 - [Hochladen](#hochladen)
 - [Anfragehilfe (PHP-Mailversand)](#anfragehilfe-php-mailversand)
 - [Fotos einsetzen](#fotos-einsetzen)
+- [Bildnachweis](#bildnachweis)
 - [Vor Veröffentlichung noch benötigt](#vor-veröffentlichung-noch-benötigt)
 - [Was geprüft wurde](#was-geprüft-wurde)
 - [Mögliche spätere Erweiterungen](#mögliche-spätere-erweiterungen)
@@ -40,6 +41,7 @@ impressum.html      Impressum – ENTWURF mit markierten Pflichtangaben
 datenschutz.html    Datenschutzerklärung – ENTWURF, beschreibt exakt die technische Realität der Website
 assets/fonts/       Oswald und Inter (WOFF2) inkl. Lizenzen
 assets/img/         logo.svg (Bildmarke), favicon.svg, concrete.svg (Hintergrundtextur), og-image.png (DE), og-image-en.png (EN)
+assets/img/photos/  Fotos (JPG + WebP), derzeit vorläufige Stockfotos – siehe „Fotos einsetzen“
 ```
 
 Alle Pfade sind relativ; die Website funktioniert auch in einem Unterverzeichnis (z. B. `https://domain.tld/privatecooking/`).
@@ -90,30 +92,46 @@ Die E-Mail-Adresse des Gasts steht im `Reply-To`, sodass Florian direkt auf die 
 
 ## Fotos einsetzen
 
-Es liegen aktuell keine freigegebenen Originalfotos vor. Die Website nutzt deshalb gestaltete Ersatzflächen (`<div class="ph …">`), die Format und Platz bereits reservieren, damit nichts springt.
+Aktuell sind **vorläufige Stockfotos** von Pexels eingesetzt (Pexels-Lizenz: kostenlos, kommerziell nutzbar, Bearbeitung erlaubt, keine Namensnennung nötig – sie ist trotzdem im Impressum und unten unter „Bildnachweis“ hinterlegt). Sie zeigen die gewünschte Bildsprache – dunkel, nah, Handwerk – aber nicht Flo und nicht seine Gerichte. Drei Stellen sind deshalb bewusst neutral betextet und sollten mit eigenen Fotos wieder persönlich werden:
 
-Sobald Fotos da sind, jede Fläche durch ein Bild ersetzen – Beispiel Hero:
+- **Hero:** Bildunterschrift derzeit „Beim Anrichten“ (statt Name). Mit dem eigenen Foto z. B. „Florian Karrer · Koch und Küchenchef“.
+- **Über Flo:** zeigt derzeit eine Hand beim Anrichten, Unterschrift „Anrichten bis ins Detail – Handwerk, keine Show.“ Mit dem echten Porträt z. B. „Florian Karrer, Koch. Zu Hause in Lech am Arlberg.“
+- **Einblicke, Einleitung:** lautet derzeit „… ein Eindruck davon, worum es mir geht: gutes Essen, ohne Show.“ Mit eigenen Bildern kann die frühere Fassung zurück: „Was hier zu sehen ist, ist auch das, was bei dir auf den Tisch kommt: kein Stock, keine Show.“
+
+Alle Bilder liegen in `assets/img/photos/` jeweils als JPG (Fallback) und WebP (kleiner) und werden per `<picture>` eingebunden:
 
 ```html
-<!-- vorher -->
-<div class="ph ph--wine" aria-hidden="true"><span class="ph__label">Beim Anrichten</span></div>
-
-<!-- nachher -->
-<img src="assets/img/flo-anrichten.jpg" width="1200" height="1500"
-     alt="Florian Karrer richtet einen Teller an" fetchpriority="high">
+<picture>
+  <source srcset="assets/img/photos/hero-anrichten.webp" type="image/webp">
+  <img class="photo" src="assets/img/photos/hero-anrichten.jpg" width="1200" height="1500"
+       alt="Koch richtet in einer Küche ein Gericht auf einem Teller an" fetchpriority="high">
+</picture>
 ```
 
-Für alle Bilder unterhalb des ersten Bildschirms zusätzlich `loading="lazy"` und `decoding="async"` setzen. `width`/`height` immer in den tatsächlichen Pixelmaßen angeben (reserviert den Platz). Empfohlene Formate: JPG oder WebP, Hero ca. 1200 × 1500 px (4:5), Porträt ca. 900 × 1200 px (3:4), Galerie je nach Fläche 900–1600 px Breite, Qualität ~80 %. Dieselben Bilder in `en.html` einsetzen (mit englischem `alt`).
+**Eigene Fotos einsetzen:** Datei im gleichen Seitenverhältnis zuschneiden, unter demselben Namen als JPG und WebP in `assets/img/photos/` ablegen (dann muss im HTML nichts geändert werden), `width`/`height` auf die tatsächlichen Pixelmaße und den `alt`-Text anpassen – in `index.html` und `en.html`. Maße der Slots: Hero 1200 × 1500 (4:5), Über Flo 1000 × 1333 (3:4), Gericht 1400 × 933 (3:2), Hände und Zutaten 900 × 1125 (4:5), Am Tisch 1600 × 900 (16:9), Am Herd und Detail 900 × 900 (1:1). Qualität ~78 % (JPG) bzw. ~74 % (WebP) reicht. Die Klasse `.photo` sorgt für Zuschnitt (`object-fit: cover`), Rahmen und Eckenradius; die gestalteten Ersatzflächen (`.ph`) bleiben im CSS für Slots ohne Foto erhalten.
 
 Auch das OG-Bild (`assets/img/og-image.png`, 1200 × 630 px) kann später durch eine Version mit echtem Foto ersetzt werden.
+
+## Bildnachweis
+
+| Datei | Stelle | Fotograf/in | Quelle |
+|---|---|---|---|
+| `hero-anrichten` | Hero – Koch beim Anrichten | Willians Huerta | [Pexels](https://www.pexels.com/photo/chef-skillfully-plating-a-gourmet-dish-36430074/) |
+| `about-handwerk` | Über Flo – Hand streut Kräuter | Lucas Durães | [Pexels](https://www.pexels.com/photo/hand-garnishing-sushi-with-herbs-on-black-surface-31299640/) |
+| `g1-gericht` | Einblicke – Gericht | Rachel Claire | [Pexels](https://www.pexels.com/photo/delicious-dish-of-poached-egg-on-black-plate-5490968/) |
+| `g2-haende` | Einblicke – Hände | Alexander Afanasyev | [Pexels](https://www.pexels.com/photo/chef-preparing-elegant-gourmet-dish-28445970/) |
+| `g3-zutaten` | Einblicke – Zutaten | Nataliya Vaitkevich | [Pexels](https://www.pexels.com/photo/fresh-vegetables-over-a-black-surface-5794774/) |
+| `g4-am-tisch` | Einblicke – Am Tisch | cottonbro studio | [Pexels](https://www.pexels.com/photo/food-plate-holiday-people-6555015/) |
+| `g5-am-herd` | Einblicke – Am Herd | cem zaloğlu | [Pexels](https://www.pexels.com/photo/a-chef-holding-a-burning-pan-6897406/) |
+| `g6-detail` | Einblicke – Detail | Change C.C | [Pexels](https://www.pexels.com/photo/exquisite-gourmet-dish-on-elegant-table-29259650/) |
+
+Alle Fotos: [Pexels-Lizenz](https://www.pexels.com/license/). Zugeschnitten und verkleinert; keine weiteren Änderungen.
 
 ## Vor Veröffentlichung noch benötigt
 
 **Inhalte und Freigaben**
 
-- [ ] Hero-Foto: Flo beim Anrichten oder in einer echten Kochsituation, Hochformat 4:5, mit Nutzungsfreigabe des Fotografen.
-- [ ] Porträt von Florian für „Über Flo“, Hochformat 3:4, freigegeben.
-- [ ] 4–6 Bilder für „Einblicke“: Gericht (3:2), Hände beim Anrichten (4:5), Zutaten (4:5), Tischsituation (16:9), am Herd (1:1), Detail (1:1). Nur eigene Gerichte, nur freigegebenes Material.
+- [ ] Eigene Fotos statt der vorläufigen Stockfotos (siehe „Fotos einsetzen“): Hero – Flo beim Anrichten (4:5); Porträt für „Über Flo“ (3:4); sechs Bilder für „Einblicke“ (Gericht 3:2, Hände 4:5, Zutaten 4:5, Tisch 16:9, Herd 1:1, Detail 1:1). Nur eigene Gerichte, nur freigegebenes Material. Danach Bildunterschriften bei Hero und „Über Flo“ sowie die Einleitung der „Einblicke“ wieder persönlich fassen und den Bildnachweis in Impressum und README anpassen.
 - [ ] Das Oktopuslogo von karrer.kitchen liegt weiterhin nicht als Datei vor und wurde nicht nachgebaut; falls es auf die Seite soll, bitte als SVG liefern.
 - [ ] Bestätigung der Texte durch Florian, insbesondere die Zahlen in „Über Flo“ (15 Jahre Küche, 19 Saisonen, Schlegelkopf, Achterdeck by Aichinger, Vila Joya) und die Zusage „in der Regel innerhalb von 24 Stunden“ in der Anfrage-Bestätigung.
 - [ ] Entscheidung, ob Social-Media-Profile verlinkt werden sollen (derzeit keine bekannt, daher keine Links).
@@ -131,7 +149,7 @@ Auch das OG-Bild (`assets/img/og-image.png`, 1200 × 630 px) kann später durch 
 - [ ] Name und Anschrift des Hosting-Anbieters sowie dessen Speicherdauer für Logfiles; Auftragsverarbeitungsvertrag prüfen.
 - [ ] Konkrete Löschfrist für Anfragen festlegen.
 - [ ] Veröffentlichungsdatum der Datenschutzerklärung eintragen.
-- [ ] Fotografen-Credits, sobald Fotos eingesetzt sind.
+- [ ] Bildnachweis im Impressum aktualisieren, sobald eigene Fotos eingesetzt sind (derzeit Pexels-Credits).
 - [ ] Prüfung beider Texte durch eine fachkundige Stelle. Die Entwürfe beschreiben die technische Realität der Website korrekt, ersetzen aber keine Rechtsberatung und behaupten keine vollständige DSGVO-Konformität.
 
 Die englische Version verlinkt auf die deutschen Rechtstexte (in Österreich üblich). Eine englische Übersetzung von Impressum und Datenschutz kann bei Bedarf ergänzt werden.
@@ -163,6 +181,7 @@ Nicht geprüft (keine Geräte verfügbar): Safari/iOS, Firefox, echte Touch-Ger�
 - Oswald © The Oswald Project Authors (Vernon Adams) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Oswald-OFL.txt`.
 - Inter © The Inter Project Authors (Rasmus Andersson) – SIL Open Font License 1.1, siehe `assets/fonts/LICENSE-Inter-OFL.txt`.
 - Die Schriftdateien sind auf den lateinischen Zeichenvorrat reduziert (erlaubt unter OFL, die Dateinamen enthalten den Zusatz „Latin“).
+- Fotos in `assets/img/photos/`: Pexels-Lizenz, Urheber siehe „Bildnachweis“.
 
 ## ZIP für die Übergabe erzeugen
 
